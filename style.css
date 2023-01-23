@@ -1,0 +1,43 @@
+body {
+    background: #182527;
+    font-family: 'Nunito', sans-serif;
+    width: 940px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 56px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h2 {
+    font-size: 19px;
+    color: #FFFFFF;
+}
+h2 a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+strong {
+    color: #20CD8D;
+    margin: 0 0 0 0;
+}
+.menu {
+    margin: 2%;
+}
+.sobre-mim {
+    display: inline;
+}
+.sobre-harmoneasy {
+    display: block;
+    position: absolute;
+    top: 3%;
+    left: 90%;
+}
+.btn-inicio {
+
+}
