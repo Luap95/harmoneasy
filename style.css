@@ -29,7 +29,10 @@ strong {
 .menu {
     display: flex;
     justify-content: space-between;
-    padding: 2% 0;
+    padding: 1% 0;
+}
+.sobre-mim:hover, .sobre-harmoneasy:hover, .rodape:hover {
+    text-decoration: underline;
 }
 .container {
     display: flex;
@@ -61,4 +64,11 @@ strong {
 }
 .imagem-apresentacao {
     width: 60%;
+}
+footer {
+    text-align: center;
+}
+.rodape, .ano-rodape {
+    text-decoration: none;
+    color: #FFFFFF;
 }
