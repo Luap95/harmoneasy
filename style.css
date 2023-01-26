@@ -48,8 +48,16 @@ strong {
     border-radius: 30px;
     width: 90%;
     align-self: center;
-    font-size: 20px;
+    font-size: 30px;
     margin: 5% 0;
+    text-decoration: none;
+    color: #182527;
+    transition: 90ms all;
+    cursor: pointer;
+}
+.btn-inicio:hover{
+    background-color: #129464;
+    transform: scale(1.2,1.2);
 }
 .imagem-apresentacao {
     width: 60%;
