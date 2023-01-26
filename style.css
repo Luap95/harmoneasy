@@ -34,6 +34,7 @@ strong {
 .sobre-mim:hover, .sobre-harmoneasy:hover, .rodape:hover {
     text-decoration: underline;
 }
+/*Apresentação*/
 .container {
     display: flex;
     justify-content: space-between;
@@ -71,4 +72,8 @@ footer {
 .rodape, .ano-rodape {
     text-decoration: none;
     color: #FFFFFF;
+}
+/*gera-harmonia*/
+.nome-site {
+    text-align: center;
 }
