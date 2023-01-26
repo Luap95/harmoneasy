@@ -77,3 +77,34 @@ footer {
 .nome-site {
     text-align: center;
 }
+.menu-op {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+legend {
+    color:#FFFFFF;
+    text-align: center;
+    padding: 1em 0;
+}
+.selecao {
+    background-color: #20CD8D;
+    border-style: none;
+    border-radius: 30px;
+    align-self: center;
+    width: 9em;
+    font-size: 30px;
+    color: #182527;
+    text-align: center;
+}
+.btn-gera-escala {
+    background-color: #20CD8D;
+    border-style: none;
+    border-radius: 30px;
+    width: 9em;
+    align-self: center;
+    font-size: 30px;
+    color: #182527;
+    text-align: center;
+    align-self: end;
+}
