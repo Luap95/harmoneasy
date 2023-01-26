@@ -24,20 +24,22 @@ h3 {
 }
 strong {
     color: #20CD8D;
-    margin: 0 0 0 0;
+    font-weight: bold;
 }
 .menu {
-    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0;
 }
-.sobre-mim {
-    display: inline;
+.container {
+    display: flex;
+    justify-content: space-between;
 }
-.sobre-harmoneasy {
-    display: block;
-    position: absolute;
-    top: 3%;
-    left: 90%;
-}
-.btn-inicio {
 
+.apresentacao {
+    margin: 2em 0;
+    align-self: center;
+}
+.imagem-apresentacao {
+    width: 60%;
 }
