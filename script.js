@@ -1,6 +1,6 @@
-function limpaIntervalo(){
-    while(tonica.firstChild){
-        tonica.removeChild(tonica.firstChild);
+function limpaIntervalo(elemento){
+    while(elemento.firstChild){
+        elemento.removeChild(elemento.firstChild);
     }
 }
 function geraEscala(){
@@ -21,14 +21,26 @@ function geraEscala(){
         alert("A posição do tom é " + indice);
         //tônica
         var tonica = document.querySelector("#tonica");
-        limpaIntervalo();
+        limpaIntervalo(tonica);
         tonica.appendChild(document.createTextNode(tom.value));
         //2ºgrau
         //soma indice da tonica por 2
+        indice = indice + 2;
         //Essa soma é menor que o limite da array -1 ?
+        if(indice <= (notas.length - 1)){
         //Se sim insere o valor na div
-        //Se não subtrai o valor de indice com valor maximo da array -1
+        var seg = document.querySelector("#seg");
+        limpaIntervalo(seg);
+        seg.appendChild(document.createTextNode(notas[indice]));
+        }
+        else {
+        //Se não subtrai o valor de indice com valor maximo da array
+        indice = indice - notas.length;
         //Reseta array e começa a contar com o resultado da subtração
         //Insere valor na div
+        var seg = document.querySelector("#seg");
+        limpaIntervalo(seg);
+        seg.appendChild(document.createTextNode(notas[indice]));
+        }
     }
 }
