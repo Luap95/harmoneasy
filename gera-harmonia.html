@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" rel="stylesheet">
-
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +29,7 @@
         <section class="menu-op">
             <div class="tom">
                 <legend>Selecione o tom</legend>
-                <select class="selecao">
+                <select class="selecao" id="sel-tom">
                     <option>Dó</option>
                     <option>Dó#</option>
                     <option>Ré</option>
@@ -46,43 +46,43 @@
             </div>
             <div class="escala">
                 <legend>Selecione a escala</legend>
-                <select class="selecao">
+                <select class="selecao" id="sel-escala">
                     <option>Maior Natural</option>
                     <option>Menor Natural</option>
                 </select>
             </div>
-            <button class="btn-gera-escala">Gerar escala</button>
+            <button class="btn-gera-escala" onclick="geraEscala()">Gerar escala</button>
         </section>
 
         <section class="escala-gerada">
             <div class="nome-intervalos">
                 <div class="intervalo">
                     <p class="tipo-intervalo">Tonica</p>
-                    <p class="notas-intervalos" id="tonica">Dó</p>
+                    <p class="notas-intervalos" id="tonica"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">2ª maior</p>
-                    <p class="notas-intervalos" id="seg">Ré</p>
+                    <p class="notas-intervalos" id="seg"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">3ª maior</p>
-                    <p class="notas-intervalos" id="ter">Mi</p>
+                    <p class="notas-intervalos" id="ter"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">4ª justa</p>
-                    <p class="notas-intervalos" id="qua">Fá</p>
+                    <p class="notas-intervalos" id="qua"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">5ª justa</p>
-                    <p class="notas-intervalos" id="qui">Sol</p>
+                    <p class="notas-intervalos" id="qui"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">6ª maior</p>
-                    <p class="notas-intervalos" id="sex">Lá</p>
+                    <p class="notas-intervalos" id="sex"></p>
                 </div>
                 <div class="intervalo">
                     <p class="tipo-intervalo">7ª maior</p>
-                    <p class="notas-intervalos" id="set">Si</p>
+                    <p class="notas-intervalos" id="set"></p>
                 </div>
                
         </section>
