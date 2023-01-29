@@ -108,6 +108,9 @@ function insereIntervalo(intervalo,nota){
 function maiorNatural(tom){
     
     var nota = tom.value;
+    var escala = [2,2,1,2,2,2];
+    var graus = ["seg","ter","qua","qui","sex","set"];
+    var interlosMaior = ["2ª Maior", "3ª Maior", "4ª Justa", "5ª Justa", "6ª Maior", "7ª Maior"];
     var indice=0;
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
@@ -119,48 +122,18 @@ function maiorNatural(tom){
     //tônica
     insereIntervalo("tonica",tom.value);
     insereGrau("tonica", "Tonica");
-    //2º maior
-    //soma o intervalo de 1 tom ao indice
-    indice = indice + 2;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("seg",notas[indice]);
-    insereGrau("seg", "2ª Maior");
-    //3º maior
-    //soma o intervalo de 1 tom ao indice
-    indice = indice + 2;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("ter",notas[indice]);
-    insereGrau("ter", "3ª Maior");
-    //4º justa
-    //soma o intervalo de 1 semi-tom ao indice
-    indice = indice + 1;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("qua",notas[indice]);
-    insereGrau("qua", "4ª Justa");
-    //5º Justa
-    //soma o intervalo de 1 tom ao indice
-    indice = indice + 2;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("qui",notas[indice]);
-    insereGrau("qui", "5ª Justa");
-    //6º maior
-    //soma o intervalo de 1 tom ao indice
-    indice = indice + 2;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("sex",notas[indice]);
-    insereGrau("sex", "6ª Maior");
-    //7º maior
-    //soma o intervalo de 1 tom ao indice
-    indice = indice + 2;
-    //Verifica se o indice não estoura a array de notas e corrige valor
-    indice = contaIndice(indice);
-    insereIntervalo("set",notas[indice]);
-    insereGrau("set", "7ª Maior");
+
+    for(var i=0; i<escala.length;i++){
+        //soma de tons e semi-tons 
+        indice = indice + escala[i];
+        //verifica e corrige o indice para não estoura a array
+        indice = contaIndice(indice);
+        //insete a nota do intervalo
+        insereIntervalo(graus[i],notas[indice]);
+        //insere o grau do intervalo
+        insereGrau(graus[i], interlosMaior[i]);
+    }
+    
 }
 function geraEscala(){
     var tom = document.querySelector("#sel-tom");
