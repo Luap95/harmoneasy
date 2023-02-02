@@ -163,6 +163,64 @@ function menorNatural(tom){
     }
     
 }
+function pentaMaior(tom){
+    
+    var nota = tom.value;
+    var escala = [2,2,3,2];
+    var graus = ["ter","qua","qui","sex"];
+    var intervalosPentaMaior = ["2ª Maior", "3ª Maior", "5ª Justa", "7ª Maior"];
+    var indice=0;
+    //procurar posição do tom 
+    for(var i=0;i<notas.length;i++){
+        if(tom.value == notas[i]){
+            indice = i;
+        }
+    }
+    //tônica
+    insereIntervalo("seg",tom.value);
+    insereGrau("seg", "Tonica");
+
+    for(var i=0; i<escala.length;i++){
+        //soma de tons e semi-tons 
+        indice = indice + escala[i];
+        //verifica e corrige o indice para não estoura a array
+        indice = contaIndice(indice);
+        //insete a nota do intervalo
+        insereIntervalo(graus[i],notas[indice]);
+        //insere o grau do intervalo
+        insereGrau(graus[i], intervalosPentaMaior[i]);
+    }
+    
+}
+function pentaMenor(tom){
+    
+    var nota = tom.value;
+    var escala = [3,2,2,3];
+    var graus = ["ter","qua","qui","sex"];
+    var intervalosPentaMaior = ["2ª Maior", "3ª Maior", "5ª Justa", "7ª Maior"];
+    var indice=0;
+    //procurar posição do tom 
+    for(var i=0;i<notas.length;i++){
+        if(tom.value == notas[i]){
+            indice = i;
+        }
+    }
+    //tônica
+    insereIntervalo("seg",tom.value);
+    insereGrau("seg", "Tonica");
+
+    for(var i=0; i<escala.length;i++){
+        //soma de tons e semi-tons 
+        indice = indice + escala[i];
+        //verifica e corrige o indice para não estoura a array
+        indice = contaIndice(indice);
+        //insete a nota do intervalo
+        insereIntervalo(graus[i],notas[indice]);
+        //insere o grau do intervalo
+        insereGrau(graus[i], intervalosPentaMaior[i]);
+    }
+    
+}
 function geraEscala(){
     var tom = document.querySelector("#sel-tom");
     var escala = document.querySelector("#sel-escala");
@@ -172,5 +230,11 @@ function geraEscala(){
     }
     if(escala.value == "Menor Natural"){
         menorNatural(tom);
+    }
+    if(escala.value == "Pentatônica Maior"){
+        pentaMaior(tom);
+    }
+    if(escala.value == "Pentatônica Menor"){
+        pentaMenor(tom);
     }
 }
