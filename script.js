@@ -110,7 +110,7 @@ function maiorNatural(tom){
     var nota = tom.value;
     var escala = [2,2,1,2,2,2];
     var graus = ["seg","ter","qua","qui","sex","set"];
-    var interlosMaior = ["2ª Maior", "3ª Maior", "4ª Justa", "5ª Justa", "6ª Maior", "7ª Maior"];
+    var intervalosMaior = ["2ª Maior", "3ª Maior", "4ª Justa", "5ª Justa", "6ª Maior", "7ª Maior"];
     var indice=0;
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
@@ -118,7 +118,6 @@ function maiorNatural(tom){
             indice = i;
         }
     }
-    alert("A posição do tom é " + indice);
     //tônica
     insereIntervalo("tonica",tom.value);
     insereGrau("tonica", "Tonica");
@@ -131,7 +130,36 @@ function maiorNatural(tom){
         //insete a nota do intervalo
         insereIntervalo(graus[i],notas[indice]);
         //insere o grau do intervalo
-        insereGrau(graus[i], interlosMaior[i]);
+        insereGrau(graus[i], intervalosMaior[i]);
+    }
+    
+}
+function menorNatural(tom){
+    
+    var nota = tom.value;
+    var escala = [2,1,2,2,1,2];
+    var graus = ["seg","ter","qua","qui","sex","set"];
+    var intervalosMenor = ["2ª Maior", "3ª Menor", "4ª Justa", "5ª Justa", "6ª Menor", "7ª Menor"];
+    var indice=0;
+    //procurar posição do tom 
+    for(var i=0;i<notas.length;i++){
+        if(tom.value == notas[i]){
+            indice = i;
+        }
+    }
+    //tônica
+    insereIntervalo("tonica",tom.value);
+    insereGrau("tonica", "Tonica");
+
+    for(var i=0; i<escala.length;i++){
+        //soma de tons e semi-tons 
+        indice = indice + escala[i];
+        //verifica e corrige o indice para não estoura a array
+        indice = contaIndice(indice);
+        //insete a nota do intervalo
+        insereIntervalo(graus[i],notas[indice]);
+        //insere o grau do intervalo
+        insereGrau(graus[i], intervalosMenor[i]);
     }
     
 }
@@ -141,5 +169,8 @@ function geraEscala(){
     
     if(escala.value == "Maior Natural"){
         maiorNatural(tom);
+    }
+    if(escala.value == "Menor Natural"){
+        menorNatural(tom);
     }
 }
