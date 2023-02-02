@@ -105,6 +105,7 @@ function insereIntervalo(intervalo,nota){
         set.appendChild(document.createTextNode(nota));
     }
 }
+
 function maiorNatural(tom){
     
     var nota = tom.value;
@@ -112,6 +113,7 @@ function maiorNatural(tom){
     var graus = ["seg","ter","qua","qui","sex","set"];
     var intervalosMaior = ["2ª Maior", "3ª Maior", "4ª Justa", "5ª Justa", "6ª Maior", "7ª Maior"];
     var indice=0;
+
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
         if(tom.value == notas[i]){
@@ -141,6 +143,7 @@ function menorNatural(tom){
     var graus = ["seg","ter","qua","qui","sex","set"];
     var intervalosMenor = ["2ª Maior", "3ª Menor", "4ª Justa", "5ª Justa", "6ª Menor", "7ª Menor"];
     var indice=0;
+
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
         if(tom.value == notas[i]){
@@ -166,10 +169,12 @@ function menorNatural(tom){
 function pentaMaior(tom){
     
     var nota = tom.value;
-    var escala = [2,2,3,2];
-    var graus = ["ter","qua","qui","sex"];
-    var intervalosPentaMaior = ["2ª Maior", "3ª Maior", "5ª Justa", "7ª Maior"];
+    var escala = [2,2,1,2,2,2];
+    var graus = ["seg","ter","qua","qui","sex","set"];
+    var intervalosPentaMaior = ["2ª Maior", "3ª Maior", "4ª Justa", "5ª Justa", "6ª Maior", "7ª Maior"];
     var indice=0;
+
+
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
         if(tom.value == notas[i]){
@@ -177,8 +182,8 @@ function pentaMaior(tom){
         }
     }
     //tônica
-    insereIntervalo("seg",tom.value);
-    insereGrau("seg", "Tonica");
+    insereIntervalo("tonica",tom.value);
+    insereGrau("tonica", "Tonica");
 
     for(var i=0; i<escala.length;i++){
         //soma de tons e semi-tons 
@@ -186,19 +191,28 @@ function pentaMaior(tom){
         //verifica e corrige o indice para não estoura a array
         indice = contaIndice(indice);
         //insete a nota do intervalo
-        insereIntervalo(graus[i],notas[indice]);
-        //insere o grau do intervalo
-        insereGrau(graus[i], intervalosPentaMaior[i]);
+        if(i != 2 && i != 5 ){
+            insereIntervalo(graus[i],notas[indice]);
+            //insere o grau do intervalo
+            insereGrau(graus[i], intervalosPentaMaior[i]);
+        }
+        else{
+            limpaIntervalo(document.getElementById(graus[i]));
+            insereGrau(graus[i], "-");
+        }
+        
     }
     
 }
 function pentaMenor(tom){
     
     var nota = tom.value;
-    var escala = [3,2,2,3];
-    var graus = ["ter","qua","qui","sex"];
-    var intervalosPentaMaior = ["2ª Maior", "3ª Maior", "5ª Justa", "7ª Maior"];
+    var escala = [2,1,2,2,1,2];
+    var graus = ["seg","ter","qua","qui","sex","set"];
+    var intervalosPentaMenor = ["2ª Maior", "3ª Menor", "4ª Justa", "5ª Justa", "6ª Menor", "7ª Menor"];
     var indice=0;
+
+
     //procurar posição do tom 
     for(var i=0;i<notas.length;i++){
         if(tom.value == notas[i]){
@@ -206,8 +220,8 @@ function pentaMenor(tom){
         }
     }
     //tônica
-    insereIntervalo("seg",tom.value);
-    insereGrau("seg", "Tonica");
+    insereIntervalo("tonica",tom.value);
+    insereGrau("tonica", "Tonica");
 
     for(var i=0; i<escala.length;i++){
         //soma de tons e semi-tons 
@@ -215,9 +229,16 @@ function pentaMenor(tom){
         //verifica e corrige o indice para não estoura a array
         indice = contaIndice(indice);
         //insete a nota do intervalo
-        insereIntervalo(graus[i],notas[indice]);
-        //insere o grau do intervalo
-        insereGrau(graus[i], intervalosPentaMaior[i]);
+        if(i != 0 && i != 4 ){
+            insereIntervalo(graus[i],notas[indice]);
+            //insere o grau do intervalo
+            insereGrau(graus[i], intervalosPentaMenor[i]);
+        }
+        else{
+            limpaIntervalo(document.getElementById(graus[i]));
+            insereGrau(graus[i], "-");
+        }
+        
     }
     
 }

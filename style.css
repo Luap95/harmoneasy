@@ -117,6 +117,11 @@ legend {
     display: flex;
     justify-content: space-between;
 }
+.intervalo {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
 .tipo-intervalo {
     color: #FFFFFF;
     text-align: center;
@@ -132,3 +137,4 @@ legend {
     font-size: 50px;
     line-height: 1.9;
 }
+
