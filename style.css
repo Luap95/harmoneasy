@@ -138,3 +138,12 @@ legend {
     line-height: 1.9;
 }
 
+/*Sobre Harmoneasy*/
+.sobre-harmo {
+    margin: 10% 20%;
+}
+.sobre {
+    color: #FFFFFF;
+    font-size: 28px;
+    text-align: center;
+}
