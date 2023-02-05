@@ -147,3 +147,37 @@ legend {
     font-size: 28px;
     text-align: center;
 }
+/*sobre mim*/
+.sobre-lucas {
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 0;
+}
+.foto-perfil{
+    width: 30%;
+    border-radius: 50%;
+}
+.contatos {
+    align-self: center;
+    width: 50%;
+}
+.lista {
+    font-size: 20px;
+    color: #FFFFFF;
+    list-style-type: disc;
+    padding-left: 1em;
+}
+.lista-contatos {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.lista-contatos li {
+    padding: 1% 0;
+}
+.lista-contatos a {
+    color:#FFFFFF
+}
+.icone {
+    width: 30px;
+    height: 30px;
+}
