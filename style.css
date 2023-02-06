@@ -175,7 +175,7 @@ legend {
     padding: 1% 0;
 }
 .lista-contatos a {
-    color:#FFFFFF
+    color:#FFFFFF;
 }
 .icone {
     width: 30px;
@@ -216,5 +216,22 @@ legend {
     }
     .intervalo {
         align-self: center;
+    }
+    .sobre-lucas {
+        display: flex;
+        flex-direction: column;
+    }
+    .foto-perfil {
+        align-self: center;
+    }
+    .contatos {
+        align-self: center;
+        width: auto;
+    }
+    .lista-contatos {
+        font-size: 16px;
+    }
+    .icone {
+        width: 10%;
     }
 }
