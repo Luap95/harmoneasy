@@ -181,3 +181,24 @@ legend {
     width: 30px;
     height: 30px;
 }
+
+/*responsivo*/
+@media screen and (max-width: 600px){
+    body {
+        width: auto;
+        padding: 3%;
+    }
+    .container {
+        flex-direction: column-reverse;
+        margin: 30% 0;
+    }
+    .imagem-apresentacao {
+        width: 70%;
+        margin: 0 auto;
+    }
+    footer {
+        position: absolute;
+        bottom: 3%;
+        right: 25%;
+    }
+}
