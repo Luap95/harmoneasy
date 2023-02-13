@@ -234,4 +234,10 @@ legend {
     .icone {
         width: 10%;
     }
+    .sobre-harmo{
+        margin: 10% auto;
+    }
+    .sobre{
+        font-size: 20px;
+    }
 }
